@@ -1,4 +1,4 @@
-package Bi3.Trabalho;
+package Trabalho;
 import java.util.Scanner;
 
 public class trabalho {
@@ -13,15 +13,15 @@ public class trabalho {
         return converterParaNatural(n, sc);
     }
 
-    public static int preencherVetor(int[] n, int numeroNatural, int numeroAtual){
-        numeroAtual = 1;
-        if (numeroAtual < numeroNatural ){
-            return numeroAtual + 1;
+    public static void preencherVetor(int[] n, int numeroFinal, int numeroAtual){
+        if (numeroAtual < numeroFinal ){
+            n[numeroAtual] = numeroAtual;
         } else {
-            return n[numeroAtual];
+            return;
         }
-        //return preencherVetor(n, numeroNatural, numeroAtual);
-        //Corrigir
+        System.out.println(n[numeroAtual] + 1);
+        preencherVetor(n, numeroFinal, numeroAtual + 1);
+        
     }
 
     public static void main(String[] args) {
@@ -29,16 +29,17 @@ public class trabalho {
 
         int numeroAtual = 0;
         System.out.println("Digite o tamanho do seu Vetor: ");
-        int numeroNatural = sc.nextInt();
+        int numeroFinal = sc.nextInt();
 
-        int[] vetor = new int[numeroNatural]; 
+        int[] vetor = new int[numeroFinal]; 
 
 
-        if (vetor[numeroAtual] < numeroNatural) {
-            preencherVetor(vetor, numeroNatural, numeroAtual);
+        if (vetor[numeroAtual] < numeroFinal) {
+            preencherVetor(vetor, numeroFinal, numeroAtual);
+            
         }
 
 
-
+        sc.close();
     }
 }

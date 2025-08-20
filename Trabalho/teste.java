@@ -1,4 +1,4 @@
-package Bi3.Trabalho;
+package Trabalho;
 import java.util.Scanner;
 
 public class teste {
